@@ -217,13 +217,15 @@ const Login = () => {
               <div className="input-wrapper">
                 <User size={18} className="input-icon" />
                 <input
+                 // padding 35 px
+                  style={{ paddingLeft: '45px' }}
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Ingrese su usuario"
                   required
                   disabled={isLoading}
-                />
+                  />
               </div>
             </div>
             <div className="form-group">
@@ -231,6 +233,7 @@ const Login = () => {
               <div className="input-wrapper">
                 <Lock size={18} className="input-icon" />
                 <input
+                  style={{ paddingLeft: '45px' }}
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
