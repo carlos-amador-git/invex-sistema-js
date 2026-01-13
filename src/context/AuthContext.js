@@ -186,8 +186,7 @@ export const AuthProvider = ({ children }) => {
       setUsuarios(prev => prev.map(u => u.id === userId ? updated : u));
       return { success: true, user: updated };
     } catch (error) {
-      const message = error.response?.data?.detail || 'Error actualizando usuario';
-      return { success: false, error: message };
+      return { success: false, error: getErrorMessage(error, 'Error actualizando usuario') };
     }
   };
 
@@ -198,8 +197,7 @@ export const AuthProvider = ({ children }) => {
       setUsuarios(prev => [...prev, newUser]);
       return { success: true, user: newUser };
     } catch (error) {
-      const message = error.response?.data?.detail || 'Error creando usuario';
-      return { success: false, error: message };
+      return { success: false, error: getErrorMessage(error, 'Error creando usuario') };
     }
   };
 

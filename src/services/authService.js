@@ -18,7 +18,7 @@ export const authService = {
     localStorage.setItem('invex_user', JSON.stringify(user));
 
     return { success: true, user };
-},
+  },
 
   /**
    * Login con reconocimiento facial
