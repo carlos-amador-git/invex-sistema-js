@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(cat:*)",
+      "Bash(python -m migrations.seed_data:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(__NEW_LINE__ echo \"\")",
+      "Bash(python3:*)",
+      "Bash(wc:*)",
+      "Bash(xargs ls:*)",
+      "Bash(python -m uvicorn:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(sqlite3:*)",
+      "Bash(find:*)",
+      "Bash(npm start)",
+      "Bash(pip3 install:*)"
+    ]
+  }
+}
