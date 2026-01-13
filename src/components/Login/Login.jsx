@@ -217,7 +217,7 @@ const Login = () => {
               <div className="input-wrapper">
                 <User size={18} className="input-icon" />
                 <input
-                  className="pl-3"
+                  className="padding-left: 40px"
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -232,7 +232,7 @@ const Login = () => {
               <div className="input-wrapper">
                 <Lock size={18} className="input-icon" />
                 <input
-                  className="pl-3"
+                  className="padding-left: 40px"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
