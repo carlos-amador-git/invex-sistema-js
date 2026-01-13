@@ -5,7 +5,15 @@ export const authService = {
    * Login con usuario y contraseña
    */
   async login(username, password) {
-    const response = await api.post('/auth/login', { username, password });
+    // 1. Creamos el formato de formulario que exige FastAPI
+    const formData = new URLSearchParams();
+    formData.append('username', username);
+    formData.append('password', password);
+
+    // 2. Enviamos formData en lugar del objeto JSON
+    // Axios detectará automáticamente el header 'application/x-www-form-urlencoded'
+    const response = await api.post('/auth/login', formData);
+    
     const { access_token, refresh_token, user } = response.data;
 
     // Guardar tokens
