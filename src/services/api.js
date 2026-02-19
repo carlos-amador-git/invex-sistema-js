@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-const RAW_API_URL = process.env.REACT_APP_API_URL || '/api';
-// Force HTTPS in production to prevent mixed content errors
-const API_BASE_URL = window.location.protocol === 'https:' && RAW_API_URL.startsWith('http:')
-  ? RAW_API_URL.replace(/^http:\/\//, 'https://')
-  : RAW_API_URL;
+// API calls go through nginx proxy at /api/ → avoids CORS and SSL cert issues
+const API_BASE_URL = '/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
