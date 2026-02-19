@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+const RAW_API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+// Force HTTPS in production to prevent mixed content errors
+const API_BASE_URL = window.location.protocol === 'https:'
+  ? RAW_API_URL.replace(/^http:\/\//, 'https://')
+  : RAW_API_URL;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
